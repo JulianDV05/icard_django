@@ -1,12 +1,10 @@
-import React from 'react'
-import { Navigation } from "./routes"
-import './index.scss'
+import React from "react";
+import { Navigation } from "./routes";
 
 export default function App() {
   return (
-    <div>
+    <div className="app">
       <Navigation />
     </div>
-  )
+  );
 }
-
