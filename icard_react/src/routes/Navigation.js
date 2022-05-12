@@ -1,8 +1,8 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { map } from "lodash";
 import routes from "./routes";
-console.log(routes);
+// console.log(routes);
 export function Navigation() {
   return (
     <BrowserRouter>
