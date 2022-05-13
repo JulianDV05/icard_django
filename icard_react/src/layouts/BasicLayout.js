@@ -1,6 +1,5 @@
-export default function BasicLayout(props) {
-    const { Children } = props;
+export function BasicLayout(props) {
+  const { children } = props;
 
-    return Children;
-  
+  return children;
 }
