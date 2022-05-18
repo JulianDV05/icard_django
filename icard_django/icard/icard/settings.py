@@ -9,7 +9,10 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
+<<<<<<< HEAD
 
+=======
+>>>>>>> develop
 import datetime
 from pathlib import Path
 
@@ -26,7 +29,11 @@ SECRET_KEY = 'django-insecure-b$io#%rtiae+v(u39&opxf=#76_a5g22xjaz1$75e34f@yxmg7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = ['127.0.0.1', "localhost"]
+=======
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+>>>>>>> develop
 
 
 # Application definition
@@ -40,14 +47,22 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'drf_yasg',
+<<<<<<< HEAD
     "corsheaders",
+=======
+    'corsheaders',
+>>>>>>> develop
     'users'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+<<<<<<< HEAD
     "corsheaders.middleware.CorsMiddleware",
+=======
+    'corsheaders.middleware.CorsMiddleware',
+>>>>>>> develop
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

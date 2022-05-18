@@ -2,13 +2,22 @@ import React from "react";
 import { Button, Form } from "semantic-ui-react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+<<<<<<< HEAD
 import { loginApi } from "../../../api/user"
+=======
+import { toast } from "react-toastify";
+import { loginApi } from "../../../api/user";
+import { useAuth } from "../../../hooks";
+>>>>>>> develop
 import "./LoginForm.scss";
 
 export function LoginForm() {
+  const { login } = useAuth();
+
   const formik = useFormik({
-    initialValues: initialValues(),
+    initialValues: intialValues(),
     validationSchema: Yup.object(validationSchema()),
+<<<<<<< HEAD
     onSubmit: async(formValue) => {
       try{
         const response = await loginApi(formValue);
@@ -17,9 +26,19 @@ export function LoginForm() {
       }catch(error){
         console.log("error");
         console.log(error);
+=======
+    onSubmit: async (formValue) => {
+      try {
+        const response = await loginApi(formValue);
+        const { access } = response;
+        login(access);
+      } catch (error) {
+        toast.error(error.message);
+>>>>>>> develop
       }
     },
   });
+
   return (
     <Form className="login-form-admin" onSubmit={formik.handleSubmit}>
       <Form.Input
@@ -42,7 +61,7 @@ export function LoginForm() {
   );
 }
 
-function initialValues() {
+function intialValues() {
   return {
     email: "",
     password: "",
