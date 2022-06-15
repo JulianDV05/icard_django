@@ -1,16 +1,16 @@
-import routerAdmin from "./routes.admin";
-import routerClient from "./routes.client";
-import {Error404} from "../pages"
-import {BasicLayout} from "../layouts"
-import {ClientLayout} from "../layouts"
+import routesAdmin from "./routes.admin";
+import routesClient from "./routes.client";
+import { Error404 } from "../pages/Error404";
+import { BasicLayout } from "../layouts";
 
 const routes = [
-    ...routerAdmin, 
-    ...routerClient, 
-    {
-        layout: BasicLayout,
-        Component: Error404
-    }
+  ...routesAdmin,
+  ...routesClient,
+  {
+    path: "/*",
+    layout: BasicLayout,
+    component: Error404,
+  },
 ];
 
 export default routes;
