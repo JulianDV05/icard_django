@@ -66,7 +66,7 @@ export async function addUserApi (data, token) {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json"
       },
-      body:JSON.stringify(data)
+      body:JSON.stringify(data),
     };
 
 
@@ -74,7 +74,7 @@ export async function addUserApi (data, token) {
     const result = await response.json ();
     return result;
   }
-  catch (error) {
+    catch (error) {
     throw error;
   }
 }
@@ -84,7 +84,7 @@ export async function  updateUserApi(id, data, token) {
     const url= `${BASE_API}/api/users/${id}/`;
     const params ={
       method:"PATCH",
-      Headers:{
+      headers:{
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json"
       },

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createContext } from "react";
 import { setToken, getToken, removeToken } from "../api/token";
-import { useUSer } from "../hooks";
+import { useUser } from "../hooks";
 
 export const AuthContext = createContext({
   auth: undefined,
@@ -11,7 +11,7 @@ export const AuthContext = createContext({
 export function AuthProvider(props) {
   const { children } = props;
   const [auth, setAuth] = useState(undefined);
-  const { getMe } = useUSer();
+  const { getMe } = useUser();
 
   useEffect(() => {
     (async () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { form, Button, Checkbox } from "semantic-ui-react";
+import { Form, Button, Checkbox } from "semantic-ui-react";
 import { useFormik} from "formik";
 import * as Yup from "yup";
 import { useUser } from "../../../../hooks";
@@ -8,6 +8,7 @@ import "./AddEditUserForm.scss";
 export function AddEditUserForm(props) {
     const { onClose, onRefetch, user} = props;
     const { addUser, updateUser } = useUser ();
+
     const formik= useFormik ({
         initialValues: initialValues(user),
         validationSchema: Yup.object( user ? updateSchame() : newSchame()),
@@ -42,14 +43,14 @@ export function AddEditUserForm(props) {
             />
             <Form.Input 
             name="first_name" 
-            placeholder="nombre"
+            placeholder="Nombre"
             value={formik.values.first_name}
             onChange={formik.handleChange}
             error={formik.error.first_name}
             />
             <Form.Input 
             name="last_name" 
-            placeholder="apellido"
+            placeholder="Apellidos"
             value={formik.values.last_name}
             onChange={formik.handleChange}
             error={formik.error.last_name}
@@ -57,13 +58,13 @@ export function AddEditUserForm(props) {
             <Form.Input 
             name="password" 
             type="password" 
-            placeholder="contraseña"
+            placeholder="Contraseña"
             value={formik.values.password}
             onChange={formik.handleChange}
             error={formik.error.password}
             />
 
-            <div className="add-edit-user-form_active">
+            <div className="add-edit-user-form__active">
                 <Checkbox 
                 toggle 
                 checked={formik.values.is_active} 
@@ -74,7 +75,7 @@ export function AddEditUserForm(props) {
 
             </div>
 
-            <div className="add-edit-user-form_staff">
+            <div className="add-edit-user-form__staff">
                 <Checkbox 
                 toggle 
                 checked={formik.values.is_staff} 
@@ -96,8 +97,6 @@ export function AddEditUserForm(props) {
 }
 
 function initialValues (data) {
-    console.log (data);
-    console.log (typeof data?.is_active);
     return {
         username: data?.username || "",
         email: data?.email || "",
@@ -105,7 +104,7 @@ function initialValues (data) {
         last_name: data?.last_name || "",
         password: data?.password || "",
         is_active: data?.is_active ? true : false,
-        is_staff:data?.is_staff  ? true : false,
+        is_staff:data?.is_staff ? true : false,
     }
 }
 
