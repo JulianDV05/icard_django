@@ -1,3 +1,6 @@
 export * from "./LoginForm";
 export * from "./TopMenu";
-export * from "./SideeMenu";
+export * from "./SideMenu";
+export * from "./HeaderPage";
+
+export * from "./Users";
