@@ -40,10 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'corsheaders',
-    'users',
-    'categories',
-    'products',
-    'tables'
+    'users'
 ]
 
 MIDDLEWARE = [
