@@ -1,5 +1,4 @@
 from django.contrib import admin
-from django.contrib import admin
 from categorias.models import Category
 
 @admin.register(Category)
