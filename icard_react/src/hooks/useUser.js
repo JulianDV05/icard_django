@@ -1,18 +1,18 @@
-import {useState} from "react";
-import { 
-  getMeApi, 
-  getUsersApi, 
+import { useState } from "react";
+import {
+  getMeApi,
+  getUsersApi,
   addUserApi,
-  updateUserApi, 
+  updateUserApi,
   deleteUserApi,
 } from "../api/user";
-import {useAuth} from "."
+import { useAuth } from ".";
 
 export function useUser() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [users, setUsers] = useState(null);
-  const { auth } =useAuth();
+  const { auth } = useAuth();
 
   const getMe = async (token) => {
     try {
@@ -25,36 +25,33 @@ export function useUser() {
 
   const getUsers = async () => {
     try {
-      setLoading (true)
-      const response= await getUsersApi(auth.token);
+      setLoading(true);
+      const response = await getUsersApi(auth.token);
       setLoading(false);
-      setUsers(response)
+      setUsers(response);
     } catch (error) {
-      
-      setLoading(false)
-      setError(error)
-
+      setLoading(false);
+      setError(error);
     }
   };
 
   const addUser = async (data) => {
-    try{
-      setLoading (true);
-      await addUserApi (data. auth.token);
-      setLoading (false);
-
-    } catch (error) {
-      setLoading (false);
-      setError (error)
-
-    }
-  };
-  const updateUser =async (id,data) => {
     try {
       setLoading(true);
-      await updateUserApi(id,data,auth.token);
+      await addUserApi(data, auth.token);
       setLoading(false);
-    }catch (error) {
+    } catch (error) {
+      setLoading(false);
+      setError(error);
+    }
+  };
+
+  const updateUser = async (id, data) => {
+    try {
+      setLoading(true);
+      await updateUserApi(id, data, auth.token);
+      setLoading(false);
+    } catch (error) {
       setLoading(false);
       setError(error);
     }
@@ -62,23 +59,21 @@ export function useUser() {
 
   const deleteUser = async (id) => {
     try {
-      setLoading (true);
-      await deleteUserApi(id , auth.token);
-      setLoading (false);
-
+      setLoading(true);
+      await deleteUserApi(id, auth.token);
+      setLoading(false);
     } catch (error) {
       setLoading(false);
       setError(error);
     }
-  }
-
+  };
 
   return {
     loading,
     error,
     users,
     getMe,
-    getUsersApi,
+    getUsers,
     addUser,
     updateUser,
     deleteUser,

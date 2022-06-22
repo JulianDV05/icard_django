@@ -36,7 +36,8 @@ export function TableUsers (props) {
                         <Actions 
                         user={user} 
                         updateUser={updateUser} 
-                        onDeleteUser={onDeleteUser}/>
+                        onDeleteUser={onDeleteUser}
+                        />
                         </Table.Row>
 
                 ))}
@@ -51,7 +52,7 @@ function Actions (props) {
     return (
         <Table.Cell textAlign ="right">
             <Button icon onClick={()=> updateUser(user)}>
-                <icon name="pencil" />
+                <Icon name="pencil" />
             </Button>
             <Button 
                 icon 
@@ -62,6 +63,6 @@ function Actions (props) {
 
             </Button>
         </Table.Cell>
-    )
+    );
 
 }

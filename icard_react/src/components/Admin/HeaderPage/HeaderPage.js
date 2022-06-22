@@ -20,5 +20,5 @@ export function HeaderPage(props){
                 )}
             </div>
         </div>
-    )
+    );
 }
