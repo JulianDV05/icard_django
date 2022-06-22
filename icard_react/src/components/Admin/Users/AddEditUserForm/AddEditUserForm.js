@@ -21,7 +21,7 @@ export function AddEditUserForm(props) {
                 onClose();
 
             } catch (error) {
-                console.error(error)
+                console.error(error);
             }
         },
     });
@@ -32,28 +32,28 @@ export function AddEditUserForm(props) {
             placeholder="Nombre de usuario" 
             value={formik.values.username}
             onChange={formik.handleChange}
-            error={formik.error.username}
+            error={formik.errors.username}
             />
             <Form.Input 
             name="email" 
             placeholder="Correo electronico"
             value={formik.values.email}
             onChange={formik.handleChange}
-            error={formik.error.email}
+            error={formik.errors.email}
             />
             <Form.Input 
             name="first_name" 
             placeholder="Nombre"
             value={formik.values.first_name}
             onChange={formik.handleChange}
-            error={formik.error.first_name}
+            error={formik.errors.first_name}
             />
             <Form.Input 
             name="last_name" 
             placeholder="Apellidos"
             value={formik.values.last_name}
             onChange={formik.handleChange}
-            error={formik.error.last_name}
+            error={formik.errors.last_name}
             />
             <Form.Input 
             name="password" 
@@ -61,7 +61,7 @@ export function AddEditUserForm(props) {
             placeholder="Contraseña"
             value={formik.values.password}
             onChange={formik.handleChange}
-            error={formik.error.password}
+            error={formik.errors.password}
             />
 
             <div className="add-edit-user-form__active">
@@ -69,7 +69,8 @@ export function AddEditUserForm(props) {
                 toggle 
                 checked={formik.values.is_active} 
                 onChange={(_ , data) => 
-                    formik.setFieldValue('is_active', data.checked)}
+                    formik.setFieldValue('is_active', data.checked)
+                }
                 /> 
                 Usuario activo
 
@@ -80,7 +81,8 @@ export function AddEditUserForm(props) {
                 toggle 
                 checked={formik.values.is_staff} 
                 onChange={(_ , data) => formik.setFieldValue('is_staff', data.checked)}
-                /> Usuario administrador
+                />
+                 Usuario administrador
 
             </div>
 
@@ -94,6 +96,7 @@ export function AddEditUserForm(props) {
         </Form>
         
     );
+
 }
 
 function initialValues (data) {
@@ -102,10 +105,10 @@ function initialValues (data) {
         email: data?.email || "",
         first_name: data?.first_name || "",
         last_name: data?.last_name || "",
-        password: data?.password || "",
+        password:  "",
         is_active: data?.is_active ? true : false,
         is_staff:data?.is_staff ? true : false,
-    }
+    };
 }
 
 function newSchame(){
@@ -117,7 +120,7 @@ function newSchame(){
         password:Yup.string().required(true),
         is_active:Yup.bool().required(true),
         is_staff:Yup.bool().required(true),
-    }
+    };
 }
 
 function updateSchame(){
@@ -129,5 +132,5 @@ function updateSchame(){
         password:Yup.string(),
         is_active:Yup.bool().required(true),
         is_staff:Yup.bool().required(true),
-    }
+    };
 }

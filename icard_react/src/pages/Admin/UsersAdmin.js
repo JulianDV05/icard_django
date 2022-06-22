@@ -1,14 +1,18 @@
 import React, { useState, useEffect} from "react";
 import { Loader } from "semantic-ui-react";
-import { HeaderPage, TableUsers, AddEditUserForm } from "../../components/Admin";
+import { 
+  HeaderPage, 
+  TableUsers, 
+  AddEditUserForm
+ } from "../../components/Admin";
 import { ModalBasic } from "../../components/common";
 import {  useUser } from "../../hooks";
 
 export function UsersAdmin() {
-  const [showModal, setShowModal] = useState(false)
-  const [titleModal, setTitleModal] = useState(null)
-  const [contentModal, setContentModal] = useState(null)
-  const [refetch, setRefetch] = useState(false)
+  const [showModal, setShowModal] = useState(false);
+  const [titleModal, setTitleModal] = useState(null);
+  const [contentModal, setContentModal] = useState(null);
+  const [refetch, setRefetch] = useState(false);
   const {loading, users, getUsers, deleteUser } = useUser();
  
   useEffect(() => getUsers(),[refetch]);
@@ -19,7 +23,7 @@ export function UsersAdmin() {
   const addUser = () => {
     setTitleModal("Nuevo usuario");
     setContentModal(
-      <AddEditUserForm openClose={openCloseModal} onRefetch={onRefetch}/>
+      <AddEditUserForm onClose={openCloseModal} onRefetch={onRefetch}/>
     );
     openCloseModal();
   };
@@ -50,7 +54,7 @@ export function UsersAdmin() {
   }
   
   return (
-    <div>
+    <>
       <HeaderPage 
         title="Usuarios" 
         btnTitle="Nuevo usuario" 
@@ -72,7 +76,8 @@ export function UsersAdmin() {
       show={showModal} 
       onClose={openCloseModal}
       title={titleModal}
-      children={contentModal}/>
-    </div>
+      children={contentModal}
+      />
+    </>
   );
 }
