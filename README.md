@@ -1,2 +1,0 @@
-# icard_django
-backend
