@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'drf_yasg',
     'corsheaders',
     'users',
-    'categories'
+    'categories',
+    'products'
 ]
 
 MIDDLEWARE = [
