@@ -6,5 +6,5 @@ from categories.api.serializers import CategorySerializer
 
 class CategoryApiViewSet(ModelViewSet):
     permissions_classes = [IsAuthenticatedOrReadOnly]
-    serializer_class = ...
+    serializer_class = CategorySerializer
     queryset = Category.objects.all()
