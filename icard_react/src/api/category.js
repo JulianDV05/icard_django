@@ -74,5 +74,3 @@ export async function deleteCategoryApi(id, token) {
     throw error;
   }
 }
-
-  
