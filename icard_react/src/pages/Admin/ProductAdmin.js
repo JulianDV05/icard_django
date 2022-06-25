@@ -5,7 +5,7 @@ import {
   TableProductAdmin,
   AddEditProductForm,
 } from "../../components/Admin";
-import { ModalBasic } from "../../components/Common";
+import { ModalBasic } from "../../components/common";
 import { useProduct } from "../../hooks";
 
 export function ProductAdmin() {

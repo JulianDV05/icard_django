@@ -3,7 +3,7 @@ import { Button } from "semantic-ui-react";
 import { useParams } from "react-router-dom";
 import { map, size, forEach } from "lodash";
 import { OrderHistoryItem } from "../../components/Client";
-import { ModalConfirm } from "../../components/Common";
+import { ModalConfirm } from "../../components/common";
 import { useOrder, useTable, usePayment } from "../../hooks";
 
 export function OrdersHistory() {

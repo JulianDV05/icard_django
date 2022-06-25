@@ -3,7 +3,7 @@ import { Loader } from "semantic-ui-react";
 import { useParams } from "react-router-dom";
 import { forEach, size } from "lodash";
 import { HeaderPage, AddOrderForm } from "../../components/Admin";
-import { ModalBasic } from "../../components/Common";
+import { ModalBasic } from "../../components/common";
 import {
   ListOrderAdmin,
   PaymentDetail,

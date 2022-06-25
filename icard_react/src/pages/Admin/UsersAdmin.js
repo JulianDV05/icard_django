@@ -5,7 +5,7 @@ import {
   TableUsers,
   AddEditUserForm,
 } from "../../components/Admin";
-import { ModalBasic } from "../../components/Common";
+import { ModalBasic } from "../../components/common";
 import { useUser } from "../../hooks";
 
 export function UsersAdmin() {
