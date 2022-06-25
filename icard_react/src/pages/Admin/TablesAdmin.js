@@ -5,7 +5,7 @@ import {
   TableTablesAdmin,
   AddEditTableForm,
 } from "../../components/Admin";
-import { ModalBasic } from "../../components/common";
+import { ModalBasic } from "../../components/Common";
 import { useTable } from "../../hooks";
 
 export function TablesAdmin() {

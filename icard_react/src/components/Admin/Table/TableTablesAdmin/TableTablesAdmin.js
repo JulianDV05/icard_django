@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Table, Button, Icon } from "semantic-ui-react";
 import { map } from "lodash";
-// import QRCode from "qrcode.react";
-import { ModalBasic } from "../../../common";
+import QRCode from "qrcode.react";
+import { ModalBasic } from "../../../Common";
 import "./TableTablesAdmin.scss";
 
 export function TableTablesAdmin(props) {
@@ -15,7 +15,7 @@ export function TableTablesAdmin(props) {
   const showQr = (table) => {
     setContentModal(
       <div style={{ textAlign: "center" }}>
-        {/* <QRCode value={`${window.location.origin}/client/${table.number}`} /> */}
+        <QRCode value={`${window.location.origin}/client/${table.number}`} />
       </div>
     );
 
@@ -41,7 +41,7 @@ export function TableTablesAdmin(props) {
                 table={table}
                 updateTable={updateTable}
                 deleteTable={deleteTable}
-                // showQr={showQr}
+                showQr={showQr}
               />
             </Table.Row>
           ))}
