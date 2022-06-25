@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Table, Button, Icon } from "semantic-ui-react";
 import { map } from "lodash";
 // import QRCode from "qrcode.react";
-import { ModalBasic } from "../../../Common";
+import { ModalBasic } from "../../../common";
 import "./TableTablesAdmin.scss";
 
 export function TableTablesAdmin(props) {
