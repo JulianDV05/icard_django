@@ -9,7 +9,7 @@ import {
 import { useAuth } from ".";
 
 export function useUser() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [users, setUsers] = useState(null);
   const { auth } = useAuth();

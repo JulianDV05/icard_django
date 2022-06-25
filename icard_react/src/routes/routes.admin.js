@@ -1,24 +1,50 @@
 import { AdminLayout } from "../layouts";
-import { HomeAdmin, UsersAdmin, CategoriesAdmin } from "../pages/Admin";
+import {
+  UsersAdmin,
+  CategoriesAdmin,
+  ProductAdmin,
+  TablesAdmin,
+  OrdersAdmin,
+  TableDetailsAdmin,
+  PaymentsHistory,
+} from "../pages/Admin";
 
 const routesAdmin = [
   {
     path: "/admin",
     layout: AdminLayout,
-    component: HomeAdmin,
+    component: OrdersAdmin,
   },
   {
     path: "/admin/users",
     layout: AdminLayout,
     component: UsersAdmin,
-    exact: true,
   },
   {
-    path:"/admin/categories",
+    path: "/admin/categories",
     layout: AdminLayout,
     component: CategoriesAdmin,
-    Exact: true,
-  }
+  },
+  {
+    path: "/admin/products",
+    layout: AdminLayout,
+    component: ProductAdmin,
+  },
+  {
+    path: "/admin/tables",
+    layout: AdminLayout,
+    component: TablesAdmin,
+  },
+  {
+    path: "/admin/table/:id",
+    layout: AdminLayout,
+    component: TableDetailsAdmin,
+  },
+  {
+    path: "/admin/payments-history",
+    layout: AdminLayout,
+    component: PaymentsHistory,
+  },
 ];
 
 export default routesAdmin;

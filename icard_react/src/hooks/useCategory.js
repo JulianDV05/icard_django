@@ -2,9 +2,8 @@ import { useState } from "react";
 import {
   getCategoriesApi,
   addCategoryApi,
-  deleteCategoryApi,
   updateCategoryApi,
- 
+  deleteCategoryApi,
 } from "../api/category";
 import { useAuth } from "./";
 
