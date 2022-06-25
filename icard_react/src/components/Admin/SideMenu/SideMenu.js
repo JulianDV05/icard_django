@@ -1,12 +1,13 @@
 import React from "react";
 import { Menu, Icon } from "semantic-ui-react";
-import { useAuth } from "../../../hooks";
 import { Link, useLocation } from "react-router-dom";
+import { useAuth } from "../../../hooks";
 import "./SideMenu.scss";
 
 export function SideMenu(props) {
   const { children } = props;
   const { pathname } = useLocation();
+
   return (
     <div className="side-menu-admin">
       <MenuLeft pathname={pathname} />
@@ -18,11 +19,13 @@ export function SideMenu(props) {
 function MenuLeft(props) {
   const { pathname } = props;
   const { auth } = useAuth();
+
   return (
-    <Menu fixed="left" borderless="side" vertical>
+    <Menu fixed="left" borderless className="side" vertical>
       <Menu.Item as={Link} to={"/admin"} active={pathname === "/admin"}>
         <Icon name="home" /> Pedidos
       </Menu.Item>
+
       <Menu.Item
         as={Link}
         to={"/admin/tables"}
@@ -30,6 +33,7 @@ function MenuLeft(props) {
       >
         <Icon name="table" /> Mesas
       </Menu.Item>
+
       <Menu.Item
         as={Link}
         to={"/admin/payments-history"}
@@ -37,6 +41,7 @@ function MenuLeft(props) {
       >
         <Icon name="history" /> Historial de pagos
       </Menu.Item>
+
       <Menu.Item
         as={Link}
         to={"/admin/categories"}
@@ -50,8 +55,9 @@ function MenuLeft(props) {
         to={"/admin/products"}
         active={pathname === "/admin/products"}
       >
-        <Icon name="list" /> Productos
+        <Icon name="cart" /> Productos
       </Menu.Item>
+
       {auth.me?.is_staff && (
         <Menu.Item
           as={Link}

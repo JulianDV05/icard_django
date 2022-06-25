@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { getOrdersByTableApi } from "../../../../api/orders";
 import { ORDER_STATUS } from "../../../../utils/constants";
 import { ReactComponent as IcTable } from "../../../../assets/table.svg";
-// import { usePayment } from "../../../../hooks";
+import { usePayment } from "../../../../hooks";
 import "./TableAdmin.scss";
 
 export function TableAdmin(props) {
@@ -14,7 +14,7 @@ export function TableAdmin(props) {
   const [orders, setOrders] = useState([]);
   const [tableBusy, setTableBusy] = useState(false);
   const [pendingPayment, setPendingPayment] = useState(false);
-  // const { getPaymentByTable } = usePayment();
+  const { getPaymentByTable } = usePayment();
 
   useEffect(() => {
     (async () => {
@@ -40,9 +40,9 @@ export function TableAdmin(props) {
 
   useEffect(() => {
     (async () => {
-      // const response = await getPaymentByTable(table.id);
-      // if (size(response) > 0) setPendingPayment(true);
-      // else setPendingPayment(false);
+      const response = await getPaymentByTable(table.id);
+      if (size(response) > 0) setPendingPayment(true);
+      else setPendingPayment(false);
     })();
   }, [reload]);
 
