@@ -2,23 +2,25 @@ import React, { useState } from "react";
 import { Form, Button } from "semantic-ui-react";
 import { useTable } from "../../../hooks";
 import "./SelectTable.scss";
+import {useNavigate} from "react-router-dom";
 
-export function SelectTable(props) {
-  const { history } = props;
+export function SelectTable() {
+  let navigate = useNavigate();
   const [tableNum, setTableNum] = useState(null);
   const [error, setError] = useState(null);
   const { isExistTable } = useTable();
 
-  const onSubmit = async () => {
-    setError(null);
+  const onSubmit = () => {
     if (!tableNum) {
       setError("No has introducido ninguna mesa");
     } else {
-      const exist = await isExistTable(tableNum);
-      if (exist) history.push(`/client/${tableNum}`);
+      if (tableNum) {
+        navigate(`/client/${tableNum}`);
+      }
       else setError("El numero de la mesa no existe");
     }
   };
+  console.log(tableNum);
 
   return (
     <div className="select-table">

@@ -98,3 +98,4 @@ export async function getTableByNumberApi(numberTable) {
     throw error;
   }
 }
+

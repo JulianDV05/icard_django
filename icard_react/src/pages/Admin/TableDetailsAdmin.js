@@ -17,14 +17,17 @@ export function TableDetailsAdmin() {
   const { loading, orders, getOrdersByTable, addPaymentToOrder } = useOrder();
   const { table, getTable } = useTable();
   const { createPayment, getPaymentByTable } = usePayment();
+  console.log(id)
 
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     getOrdersByTable(id, "", "ordering=-status,created_at");
-  }, [id, reloadOrders]);
+  }, []);
 
-  useEffect(() => getTable(id), [id]);
+  useEffect(() =>{
+    getTable(id)
+  }, [id]);
 
   useEffect(() => {
     (async () => {
