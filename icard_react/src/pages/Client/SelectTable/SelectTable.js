@@ -15,7 +15,7 @@ export function SelectTable(props) {
       setError("No has introducido ninguna mesa");
     } else {
       const exist = await isExistTable(tableNum);
-      if (exist) history.push(`/client/${tableNum}`);
+      if (exist) history.push(`/Client/${tableNum}`);
       else setError("El numero de la mesa no existe");
     }
   };
