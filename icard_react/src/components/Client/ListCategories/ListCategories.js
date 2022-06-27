@@ -10,7 +10,7 @@ export function ListCategories(props) {
   const history = useNavigate();
 
   const goToCategory = (id) => {
-    history.push(`${location.pathname}/${id}`);
+    history(`${location.pathname}/${id}`);
   };
 
   return (

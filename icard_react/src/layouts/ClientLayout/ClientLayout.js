@@ -19,14 +19,17 @@ export function ClientLayout(props) {
 
   const closeTable = () => {
     history ("/");
+    window.location.reload();
   };
 
   const goToCart = () => {
     history (`/client/${tableNumber}/cart`);
+    window.location.reload();
   };
 
   const goToOrders = () => {
     history (`/client/${tableNumber}/orders`);
+    window.location.reload();
   };
 
   return (
