@@ -1,5 +1,8 @@
 .ui.primary.button {
-    background-color: #0098d3;
+  background-color: red !important;
     color: #fff;
     border-radius: 8px;
   }
+.ui.primary.button:hover{ 
+  background-color: black !important;
+}
