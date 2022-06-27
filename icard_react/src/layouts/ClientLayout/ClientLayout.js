@@ -18,15 +18,15 @@ export function ClientLayout(props) {
   }, [tableNumber]);
 
   const closeTable = () => {
-    history.push("/");
+    history ("/");
   };
 
   const goToCart = () => {
-    history.push(`/client/${tableNumber}/cart`);
+    history (`/client/${tableNumber}/cart`);
   };
 
   const goToOrders = () => {
-    history.push(`/client/${tableNumber}/orders`);
+    history (`/client/${tableNumber}/orders`);
   };
 
   return (
