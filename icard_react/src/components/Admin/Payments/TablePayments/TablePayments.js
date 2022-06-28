@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Table, Button, Icon } from "semantic-ui-react";
 import { map } from "lodash";
 import moment from "moment";
-import { ModalBasic } from "../../../Common";
+import { ModalBasic } from "../../../common";
 import { PaymentProductList } from "../../../Admin";
 import "./TablePayments.scss";
 

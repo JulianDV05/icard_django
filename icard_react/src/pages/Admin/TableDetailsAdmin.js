@@ -3,7 +3,7 @@ import { Loader } from "semantic-ui-react";
 import { useParams } from "react-router-dom";
 import { forEach, size } from "lodash";
 import { HeaderPage, AddOrderForm } from "../../components/Admin";
-import { ModalBasic } from "../../components/Common";
+import { ModalBasic } from "../../components/common";
 import {
   ListOrderAdmin,
   PaymentDetail,
@@ -17,14 +17,17 @@ export function TableDetailsAdmin() {
   const { loading, orders, getOrdersByTable, addPaymentToOrder } = useOrder();
   const { table, getTable } = useTable();
   const { createPayment, getPaymentByTable } = usePayment();
+  console.log(id)
 
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     getOrdersByTable(id, "", "ordering=-status,created_at");
-  }, [id, reloadOrders]);
+  }, []);
 
-  useEffect(() => getTable(id), [id]);
+  useEffect(() =>{
+    getTable(id)
+  }, [id]);
 
   useEffect(() => {
     (async () => {

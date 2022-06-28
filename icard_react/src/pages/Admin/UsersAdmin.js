@@ -5,7 +5,7 @@ import {
   TableUsers,
   AddEditUserForm,
 } from "../../components/Admin";
-import { ModalBasic } from "../../components/Common";
+import { ModalBasic } from "../../components/common";
 import { useUser } from "../../hooks";
 
 export function UsersAdmin() {
@@ -15,7 +15,9 @@ export function UsersAdmin() {
   const [refetch, setRefetch] = useState(false);
   const { loading, users, getUsers, deleteUser } = useUser();
 
-  useEffect(() => getUsers(), [refetch]);
+  useEffect(() => {
+    getUsers()
+  }, [refetch]);
 
   const openCloseModal = () => setShowModal((prev) => !prev);
   const onRefetch = () => setRefetch((prev) => !prev);

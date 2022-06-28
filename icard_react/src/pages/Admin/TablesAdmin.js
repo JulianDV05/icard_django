@@ -5,7 +5,7 @@ import {
   TableTablesAdmin,
   AddEditTableForm,
 } from "../../components/Admin";
-import { ModalBasic } from "../../components/Common";
+import { ModalBasic } from "../../components/common";
 import { useTable } from "../../hooks";
 
 export function TablesAdmin() {
@@ -15,7 +15,10 @@ export function TablesAdmin() {
   const [refetch, setRefetch] = useState(false);
   const { loading, tables, getTables, deleteTable } = useTable();
 
-  useEffect(() => getTables(), [refetch]);
+  useEffect(() => {
+    getTables()
+  }
+   ,[refetch]);
 
   const openCloseModal = () => setShowModal((prev) => !prev);
   const onRefetch = () => setRefetch((prev) => !prev);

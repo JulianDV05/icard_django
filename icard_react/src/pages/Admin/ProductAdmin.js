@@ -5,7 +5,7 @@ import {
   TableProductAdmin,
   AddEditProductForm,
 } from "../../components/Admin";
-import { ModalBasic } from "../../components/Common";
+import { ModalBasic } from "../../components/common";
 import { useProduct } from "../../hooks";
 
 export function ProductAdmin() {
@@ -15,7 +15,9 @@ export function ProductAdmin() {
   const [refetch, setRefetch] = useState(false);
   const { loading, products, getProducts, deleteProduct } = useProduct();
 
-  useEffect(() => getProducts(), [refetch]);
+  useEffect(() => {
+    getProducts()
+  }, [refetch]);
 
   const openCloseModal = () => setShowModal((prev) => !prev);
   const onRefetch = () => setRefetch((prev) => !prev);

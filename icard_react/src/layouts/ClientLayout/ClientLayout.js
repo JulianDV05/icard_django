@@ -18,15 +18,18 @@ export function ClientLayout(props) {
   }, [tableNumber]);
 
   const closeTable = () => {
-    history.push("/");
+    history ("/");
+    window.location.reload();
   };
 
   const goToCart = () => {
-    history.push(`/client/${tableNumber}/cart`);
+    history (`/client/${tableNumber}/cart`);
+    window.location.reload();
   };
 
   const goToOrders = () => {
-    history.push(`/client/${tableNumber}/orders`);
+    history (`/client/${tableNumber}/orders`);
+    window.location.reload();
   };
 
   return (
