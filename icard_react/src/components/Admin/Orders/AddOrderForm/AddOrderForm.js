@@ -13,8 +13,12 @@ export function AddOrderForm(props) {
   const { products, getProducts, getProductById } = useProduct();
   const { addOrderToTable } = useOrder();
 
-  useEffect(() => getProducts(), []);
-  useEffect(() => setProductsFormat(formatDropdownData(products)), [products]);
+  useEffect(() => {
+    getProducts()
+  }, []);
+  useEffect(() => {
+    setProductsFormat(formatDropdownData(products))
+  }, [products]);
 
   const formik = useFormik({
     initialValues: initialValues(),
@@ -30,7 +34,9 @@ export function AddOrderForm(props) {
     },
   });
 
-  useEffect(() => addProductList(), [formik.values]);
+  useEffect(() => {
+    addProductList()
+  }, [formik.values]);
 
   const addProductList = async () => {
     try {
