@@ -36,24 +36,26 @@ export function ListProductCart(props) {
     }
 
     cleanProductCartApi();
-    history.push(`/client/${tableNumber}/orders`);
+    history(`/client/${tableNumber}/orders`);
   };
+  console.log(products)
+  if (!products) return null
 
   return (
     <div className="list-product-cart">
-      {map(products, (product, index) => (
+      {products?.map((product, index) => (
         <div key={index} className="list-product-cart__product">
           <div>
             <Image src={product.image} avatar />
             <span>{product.title}</span>
           </div>
-          <span>{product.price} €</span>
+          <span>$ {product.price} </span>
           <Icon name="close" onClick={() => removeProduct(index)} />
         </div>
       ))}
 
       <Button primary fluid onClick={createOrder}>
-        Realizar pedido ({total} €)
+        Realizar pedido ($ {total} )
       </Button>
     </div>
   );
